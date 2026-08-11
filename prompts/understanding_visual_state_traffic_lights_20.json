@@ -1,0 +1,122 @@
+[
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_01_red_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "red",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000536294.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_02_red_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "red",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000058701.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_03_red_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "red",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000011788.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_04_red_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "red",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000284762.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_05_red_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "red",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000197335.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_06_red_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "red",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000267840.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_07_red_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "red",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000076249.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_08_red_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "red",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000015272.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_09_red_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "red",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000417716.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_10_red_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "red",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000404781.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_11_green_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "green",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000307438.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_12_green_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "green",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000458221.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_13_green_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "green",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000311068.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_14_green_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "green",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000008179.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_15_green_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "green",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000430690.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_16_green_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "green",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000361400.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_17_green_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "green",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000126046.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_18_green_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "green",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000472101.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_19_green_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "green",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000525371.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/visual_state_traffic_lights/visual_state_20_green_traffic_light.jpg",
+    "prompt": "What color is the traffic light?",
+    "expected_answer": "green",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000233164.jpg"
+  }
+]
