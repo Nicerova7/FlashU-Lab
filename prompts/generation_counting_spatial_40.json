@@ -1,0 +1,322 @@
+[
+  {
+    "prompt_file_name": "counting_01_one_dog",
+    "prompt": "a photo of one dog",
+    "tag": "counting",
+    "include": [{"class": "dog", "count": 1}],
+    "exclude": [{"class": "dog", "count": 2}]
+  },
+  {
+    "prompt_file_name": "counting_02_one_bear",
+    "prompt": "a photo of one bear",
+    "tag": "counting",
+    "include": [{"class": "bear", "count": 1}],
+    "exclude": [{"class": "bear", "count": 2}]
+  },
+  {
+    "prompt_file_name": "counting_03_one_elephant",
+    "prompt": "a photo of one elephant",
+    "tag": "counting",
+    "include": [{"class": "elephant", "count": 1}],
+    "exclude": [{"class": "elephant", "count": 2}]
+  },
+  {
+    "prompt_file_name": "counting_04_one_train",
+    "prompt": "a photo of one train",
+    "tag": "counting",
+    "include": [{"class": "train", "count": 1}],
+    "exclude": [{"class": "train", "count": 2}]
+  },
+  {
+    "prompt_file_name": "counting_05_one_cat",
+    "prompt": "a photo of one cat",
+    "tag": "counting",
+    "include": [{"class": "cat", "count": 1}],
+    "exclude": [{"class": "cat", "count": 2}]
+  },
+  {
+    "prompt_file_name": "counting_06_two_zebras",
+    "prompt": "a photo of two zebras",
+    "tag": "counting",
+    "include": [{"class": "zebra", "count": 2}],
+    "exclude": [{"class": "zebra", "count": 3}]
+  },
+  {
+    "prompt_file_name": "counting_07_two_elephants",
+    "prompt": "a photo of two elephants",
+    "tag": "counting",
+    "include": [{"class": "elephant", "count": 2}],
+    "exclude": [{"class": "elephant", "count": 3}]
+  },
+  {
+    "prompt_file_name": "counting_08_two_cows",
+    "prompt": "a photo of two cows",
+    "tag": "counting",
+    "include": [{"class": "cow", "count": 2}],
+    "exclude": [{"class": "cow", "count": 3}]
+  },
+  {
+    "prompt_file_name": "counting_09_two_giraffes",
+    "prompt": "a photo of two giraffes",
+    "tag": "counting",
+    "include": [{"class": "giraffe", "count": 2}],
+    "exclude": [{"class": "giraffe", "count": 3}]
+  },
+  {
+    "prompt_file_name": "counting_10_two_bears",
+    "prompt": "a photo of two bears",
+    "tag": "counting",
+    "include": [{"class": "bear", "count": 2}],
+    "exclude": [{"class": "bear", "count": 3}]
+  },
+  {
+    "prompt_file_name": "counting_11_three_oranges",
+    "prompt": "a photo of three oranges",
+    "tag": "counting",
+    "include": [{"class": "orange", "count": 3}],
+    "exclude": [{"class": "orange", "count": 4}]
+  },
+  {
+    "prompt_file_name": "counting_12_three_elephants",
+    "prompt": "a photo of three elephants",
+    "tag": "counting",
+    "include": [{"class": "elephant", "count": 3}],
+    "exclude": [{"class": "elephant", "count": 4}]
+  },
+  {
+    "prompt_file_name": "counting_13_three_zebras",
+    "prompt": "a photo of three zebras",
+    "tag": "counting",
+    "include": [{"class": "zebra", "count": 3}],
+    "exclude": [{"class": "zebra", "count": 4}]
+  },
+  {
+    "prompt_file_name": "counting_14_three_bears",
+    "prompt": "a photo of three bears",
+    "tag": "counting",
+    "include": [{"class": "bear", "count": 3}],
+    "exclude": [{"class": "bear", "count": 4}]
+  },
+  {
+    "prompt_file_name": "counting_15_three_buses",
+    "prompt": "a photo of three buses",
+    "tag": "counting",
+    "include": [{"class": "bus", "count": 3}],
+    "exclude": [{"class": "bus", "count": 4}]
+  },
+  {
+    "prompt_file_name": "counting_16_four_elephants",
+    "prompt": "a photo of four elephants",
+    "tag": "counting",
+    "include": [{"class": "elephant", "count": 4}],
+    "exclude": [{"class": "elephant", "count": 5}]
+  },
+  {
+    "prompt_file_name": "counting_17_four_cows",
+    "prompt": "a photo of four cows",
+    "tag": "counting",
+    "include": [{"class": "cow", "count": 4}],
+    "exclude": [{"class": "cow", "count": 5}]
+  },
+  {
+    "prompt_file_name": "counting_18_four_bottles",
+    "prompt": "a photo of four bottles",
+    "tag": "counting",
+    "include": [{"class": "bottle", "count": 4}],
+    "exclude": [{"class": "bottle", "count": 5}]
+  },
+  {
+    "prompt_file_name": "counting_19_four_horses",
+    "prompt": "a photo of four horses",
+    "tag": "counting",
+    "include": [{"class": "horse", "count": 4}],
+    "exclude": [{"class": "horse", "count": 5}]
+  },
+  {
+    "prompt_file_name": "counting_20_four_giraffes",
+    "prompt": "a photo of four giraffes",
+    "tag": "counting",
+    "include": [{"class": "giraffe", "count": 4}],
+    "exclude": [{"class": "giraffe", "count": 5}]
+  },
+  {
+    "prompt_file_name": "spatial_01_dog_left_of_hydrant",
+    "prompt": "a photo of a dog left of a fire hydrant",
+    "tag": "position",
+    "include": [
+      {"class": "fire hydrant", "count": 1},
+      {"class": "dog", "count": 1, "position": ["left of", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_02_motorcycle_left_of_person",
+    "prompt": "a photo of a motorcycle left of a person",
+    "tag": "position",
+    "include": [
+      {"class": "person", "count": 1},
+      {"class": "motorcycle", "count": 1, "position": ["left of", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_03_person_left_of_cat",
+    "prompt": "a photo of a person left of a cat",
+    "tag": "position",
+    "include": [
+      {"class": "cat", "count": 1},
+      {"class": "person", "count": 1, "position": ["left of", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_04_bicycle_left_of_person",
+    "prompt": "a photo of a bicycle left of a person",
+    "tag": "position",
+    "include": [
+      {"class": "person", "count": 1},
+      {"class": "bicycle", "count": 1, "position": ["left of", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_05_dog_left_of_cat",
+    "prompt": "a photo of a dog left of a cat",
+    "tag": "position",
+    "include": [
+      {"class": "cat", "count": 1},
+      {"class": "dog", "count": 1, "position": ["left of", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_06_person_right_of_motorcycle",
+    "prompt": "a photo of a person right of a motorcycle",
+    "tag": "position",
+    "include": [
+      {"class": "motorcycle", "count": 1},
+      {"class": "person", "count": 1, "position": ["right of", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_07_cat_right_of_bottle",
+    "prompt": "a photo of a cat right of a bottle",
+    "tag": "position",
+    "include": [
+      {"class": "bottle", "count": 1},
+      {"class": "cat", "count": 1, "position": ["right of", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_08_dog_right_of_bench",
+    "prompt": "a photo of a dog right of a bench",
+    "tag": "position",
+    "include": [
+      {"class": "bench", "count": 1},
+      {"class": "dog", "count": 1, "position": ["right of", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_09_cup_right_of_bottle",
+    "prompt": "a photo of a cup right of a bottle",
+    "tag": "position",
+    "include": [
+      {"class": "bottle", "count": 1},
+      {"class": "cup", "count": 1, "position": ["right of", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_10_car_right_of_motorcycle",
+    "prompt": "a photo of a car right of a motorcycle",
+    "tag": "position",
+    "include": [
+      {"class": "motorcycle", "count": 1},
+      {"class": "car", "count": 1, "position": ["right of", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_11_cat_above_suitcase",
+    "prompt": "a photo of a cat above a suitcase",
+    "tag": "position",
+    "include": [
+      {"class": "suitcase", "count": 1},
+      {"class": "cat", "count": 1, "position": ["above", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_12_umbrella_above_person",
+    "prompt": "a photo of an umbrella above a person",
+    "tag": "position",
+    "include": [
+      {"class": "person", "count": 1},
+      {"class": "umbrella", "count": 1, "position": ["above", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_13_traffic_light_above_car",
+    "prompt": "a photo of a traffic light above a car",
+    "tag": "position",
+    "include": [
+      {"class": "car", "count": 1},
+      {"class": "traffic light", "count": 1, "position": ["above", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_14_person_above_skateboard",
+    "prompt": "a photo of a person above a skateboard",
+    "tag": "position",
+    "include": [
+      {"class": "skateboard", "count": 1},
+      {"class": "person", "count": 1, "position": ["above", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_15_person_above_cat",
+    "prompt": "a photo of a person above a cat",
+    "tag": "position",
+    "include": [
+      {"class": "cat", "count": 1},
+      {"class": "person", "count": 1, "position": ["above", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_16_surfboard_below_person",
+    "prompt": "a photo of a surfboard below a person",
+    "tag": "position",
+    "include": [
+      {"class": "person", "count": 1},
+      {"class": "surfboard", "count": 1, "position": ["below", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_17_cat_below_bench",
+    "prompt": "a photo of a cat below a bench",
+    "tag": "position",
+    "include": [
+      {"class": "bench", "count": 1},
+      {"class": "cat", "count": 1, "position": ["below", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_18_skateboard_below_person",
+    "prompt": "a photo of a skateboard below a person",
+    "tag": "position",
+    "include": [
+      {"class": "person", "count": 1},
+      {"class": "skateboard", "count": 1, "position": ["below", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_19_suitcase_below_person",
+    "prompt": "a photo of a suitcase below a person",
+    "tag": "position",
+    "include": [
+      {"class": "person", "count": 1},
+      {"class": "suitcase", "count": 1, "position": ["below", 0]}
+    ]
+  },
+  {
+    "prompt_file_name": "spatial_20_bench_below_person",
+    "prompt": "a photo of a bench below a person",
+    "tag": "position",
+    "include": [
+      {"class": "person", "count": 1},
+      {"class": "bench", "count": 1, "position": ["below", 0]}
+    ]
+  }
+]

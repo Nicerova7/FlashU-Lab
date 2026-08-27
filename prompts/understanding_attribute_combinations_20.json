@@ -1,0 +1,122 @@
+[
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_01_red_car.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "red car",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000142129.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_02_red_car.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "red car",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000225014.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_03_red_car.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "red car",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000445309.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_04_red_car.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "red car",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000493286.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_05_red_car.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "red car",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000147576.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_06_blue_car.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "blue car",
+    "source_url": "http://images.cocodataset.org/train2014/COCO_train2014_000000173652.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_07_blue_car.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "blue car",
+    "source_url": "http://images.cocodataset.org/train2014/COCO_train2014_000000139389.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_08_blue_car.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "blue car",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000135275.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_09_blue_car.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "blue car",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000466981.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_10_blue_car.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "blue car",
+    "source_url": "http://images.cocodataset.org/train2014/COCO_train2014_000000387924.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_11_red_bus.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "red bus",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000524140.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_12_red_bus.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "red bus",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000232900.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_13_red_bus.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "red bus",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000275843.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_14_red_bus.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "red bus",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000230177.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_15_red_bus.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "red bus",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000372317.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_16_blue_bus.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "blue bus",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000076595.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_17_blue_bus.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "blue bus",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000102056.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_18_blue_bus.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "blue bus",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000494571.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_19_blue_bus.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "blue bus",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000070294.jpg"
+  },
+  {
+    "image_path": "/content/drive/MyDrive/intership/EXPERIMENT-UNDERSTANDING/attribute_combinations/attribute_combo_20_blue_bus.jpg",
+    "prompt": "Is the main color of the vehicle red or blue, and is it a car or a bus?",
+    "expected_answer": "blue bus",
+    "source_url": "http://images.cocodataset.org/val2014/COCO_val2014_000000078627.jpg"
+  }
+]
