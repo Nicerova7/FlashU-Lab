@@ -15,8 +15,9 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")  # Save figures in Colab or a terminal without a display.
 import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap, Normalize
+from matplotlib.colors import ListedColormap, Normalize, SymLogNorm
 from matplotlib.patches import Patch
+from matplotlib.ticker import FormatStrFormatter
 import numpy as np
 from PIL import Image
 import torch
@@ -43,6 +44,8 @@ def parse_arguments():
     parser.add_argument("--tokens", type=int, nargs="+",
                         help="Sequence positions to track; default: first token of each type")
     parser.add_argument("--image-path", type=Path, help="Original image location if it moved since collection")
+    parser.add_argument("--color-scale", choices=["log", "linear"], default="log",
+                        help="Heatmap colors; default: log (linear between 0 and 1 to include zeros)")
     return parser.parse_args()
 
 
@@ -108,7 +111,16 @@ def save_figure(fig, output_dir, filename):
     print(f"Saved {path}")
 
 
-def plot_layer_token_heatmap(scores, layers, tokens):
+def make_color_norm(values, color_scale):
+    """Map raw scores to colors; share the mapping across displayed layers."""
+    maximum = max(float(values.max()), 1e-12)
+    if color_scale == "linear":
+        return Normalize(vmin=0, vmax=maximum)
+    # Logarithmic above 1; the linear 0-1 range keeps zero scores visible.
+    return SymLogNorm(linthresh=1.0, vmin=0, vmax=maximum, base=10)
+
+
+def plot_layer_token_heatmap(scores, layers, tokens, color_scale="log"):
     """Rows are saved layers; columns retain the complete input sequence order."""
     fig, (type_ax, ax) = plt.subplots(
         2, 1, figsize=(17, 9), sharex=True,
@@ -126,12 +138,13 @@ def plot_layer_token_heatmap(scores, layers, tokens):
     type_ax.legend(handles=legend, loc="lower center", bbox_to_anchor=(0.5, 1.3),
                    ncol=3, frameon=False)
     heatmap = ax.imshow(scores, aspect="auto", interpolation="nearest", cmap="viridis",
-                        vmin=0, vmax=max(float(scores.max()), 1e-12))
+                        norm=make_color_norm(scores, color_scale))
     ax.set_yticks(range(len(layers)), labels=layers)
     ax.set_xticks(np.unique(np.linspace(0, len(tokens) - 1, min(12, len(tokens)), dtype=int)))
     ax.set(xlabel="Token sequence position", ylabel="Decoder layer index")
-    fig.colorbar(heatmap, ax=[type_ax, ax], label=SCORE_LABEL, pad=0.02)
-    fig.suptitle("Understanding prefill | Layer x token", fontsize=15)
+    fig.colorbar(heatmap, ax=[type_ax, ax], label=SCORE_LABEL, pad=0.02,
+                 format=FormatStrFormatter("%g"))
+    fig.suptitle(f"Understanding prefill | Layer x token | {color_scale} colors", fontsize=15)
     return fig
 
 
@@ -216,9 +229,9 @@ def visual_patch_grids(scores, tokens, metadata):
     return grids
 
 
-def plot_visual_patches(grids, layers, selected_layers, image):
+def plot_visual_patches(grids, layers, selected_layers, image, color_scale="log"):
     rows = [layers.index(layer) for layer in selected_layers]
-    norm = Normalize(vmin=0, vmax=max(float(grids[rows].max()), 1e-12))
+    norm = make_color_norm(grids[rows], color_scale)
     count = len(rows) + int(image is not None)
     fig, axes = plt.subplots(1, count, figsize=(4.5 * count, 4.8),
                              squeeze=False, layout="constrained")
@@ -238,8 +251,8 @@ def plot_visual_patches(grids, layers, selected_layers, image):
     for ax in axes:
         ax.set(xticks=[], yticks=[])
     fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap="viridis"), ax=list(axes[offset:]),
-                 label=SCORE_LABEL, shrink=0.8)
-    fig.suptitle("Visual tokens | Shared raw score scale", fontsize=14)
+                 label=SCORE_LABEL, shrink=0.8, format=FormatStrFormatter("%g"))
+    fig.suptitle(f"Visual tokens | Shared {color_scale} color scale", fontsize=14)
     return fig
 
 
@@ -260,7 +273,7 @@ def main():
     plt.rcParams.update({"font.size": 10, "text.parse_math": False})
 
     # --- 3. Plot every saved layer and token ---
-    fig = plot_layer_token_heatmap(scores, layers, tokens)
+    fig = plot_layer_token_heatmap(scores, layers, tokens, args.color_scale)
     save_figure(fig, output_dir, "layer_token_heatmap.png")
 
     # --- 4. Track selected token positions through the layers ---
@@ -272,7 +285,7 @@ def main():
     save_figure(fig, output_dir, "token_type_distributions.png")
 
     # --- 6. Map visual scores onto image-patch positions ---
-    fig = plot_visual_patches(grids, layers, selected_layers, image)
+    fig = plot_visual_patches(grids, layers, selected_layers, image, args.color_scale)
     save_figure(fig, output_dir, "visual_patch_heatmaps.png")
 
 

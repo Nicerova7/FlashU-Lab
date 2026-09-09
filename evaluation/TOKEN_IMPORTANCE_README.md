@@ -205,10 +205,17 @@ collector environment. Plots are saved in
 | `token_type_distributions.png` | Distributions of saved scores by token type at selected layers |
 | `visual_patch_heatmaps.png` | Visual-token scores placed on the saved patch grid, over the processed image when available |
 
-Colors and axes show **raw layer-update L2 magnitudes**, without percentile
-conversion or layer normalization. Box plots summarize those existing values;
-they do not create new importance labels. Patch maps share one color scale across
-the displayed layers. Larger updates do not establish an effect on answer quality.
+Heatmaps use a **shared logarithmic color scale** by default, so a few large
+updates do not hide differences among smaller scores. The colorbar still shows
+raw L2 values. The mapping is linear from 0 to 1 to include zero scores, and
+logarithmic above 1 (`SymLogNorm`). No values are removed or clipped, and the
+saved labels are unchanged. Patch maps share one mapping across displayed layers.
+
+Use `--color-scale linear` to restore the original linear color scale. This option
+changes the layer-token heatmap and visual-patch maps; token traces and box-plot
+axes remain linear. Box plots summarize the existing raw scores without
+percentile conversion or layer normalization. Larger updates do not establish
+an effect on answer quality.
 
 Defaults show the first, middle, and last recorded layers for the distributions
 and patch maps. Token traces use the first token of each present type; these are
