@@ -171,6 +171,69 @@ This output uses schema version 2 and score name `token_decoder_update_l2_v2`.
 Version 1 files contain only visual rows; do not mix their row indexing with this
 schema. Patch metadata now lives in the per-token records.
 
+## Visualize the saved token scores
+
+`evaluation/visualize_token_importance_understanding.py` reads one schema-v2
+`sample_XXXXXX.pt` file and saves four PNG figures. It uses the existing
+`update_l2_matrix` and token metadata. No inference, score recalculation, GPU,
+model weights, or saved `hidden_out` vectors are needed.
+
+Run from the repository root:
+
+```bash
+python -m evaluation.visualize_token_importance_understanding \
+  token_prefill_counting_pilot/sample_000000.pt
+```
+
+In Colab, using the collector's `output_dir` variable:
+
+```python
+%pip install -q "matplotlib>=3.6" numpy pillow
+
+!python -m evaluation.visualize_token_importance_understanding \
+    "{output_dir}/sample_000000.pt"
+```
+
+PyTorch is also required to read the tensor file; it is already part of the
+collector environment. Plots are saved in
+`<output_dir>/visualizations/sample_000000/` by default:
+
+| Figure | Contents |
+|---|---|
+| `layer_token_heatmap.png` | All recorded layers x all token positions, with a token-type strip |
+| `token_traces.png` | The same selected sequence positions tracked across recorded layers |
+| `token_type_distributions.png` | Distributions of saved scores by token type at selected layers |
+| `visual_patch_heatmaps.png` | Visual-token scores placed on the saved patch grid, over the processed image when available |
+
+Colors and axes show **raw layer-update L2 magnitudes**, without percentile
+conversion or layer normalization. Box plots summarize those existing values;
+they do not create new importance labels. Patch maps share one color scale across
+the displayed layers. Larger updates do not establish an effect on answer quality.
+
+Defaults show the first, middle, and last recorded layers for the distributions
+and patch maps. Token traces use the first token of each present type; these are
+examples, not a top-token selection. To choose specific recorded layer IDs and
+token sequence positions:
+
+```bash
+python -m evaluation.visualize_token_importance_understanding \
+  token_prefill_counting_pilot/sample_000000.pt \
+  --layers 0 13 27 --tokens 0 1 2
+```
+
+`--layers` only changes the distributions and patch maps. The full heatmap and
+token traces still include every recorded layer. Each file is plotted separately:
+token positions are not averaged across different examples.
+
+The overlay uses the collector's resized, center-cropped image geometry and
+checks its saved hash. If the original image has moved, supply
+`--image-path /new/path/to/original.jpg`. If its saved path is unavailable, the
+script still saves all four plots, with standalone patch maps instead of image
+overlays. An explicitly supplied missing or different image raises an error.
+
+Use `--output-dir /path/to/plots` to choose another destination. Rerunning the
+same visualization replaces its four PNG files; the saved scores are unchanged.
+
 ## Read labels for the future MLP
 
 ```python
