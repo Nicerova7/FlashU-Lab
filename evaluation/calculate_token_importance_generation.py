@@ -20,6 +20,7 @@ Options: num_inference_steps=50; cfg_branches=conditional (or both);
 save_input_features=true; save_hidden_out=false; truncate_prompt=false.
 Euler only: 50 time-grid points produce 49 model evaluations, indexed 0..48.
 steps=[0,24,48] records only those evaluations but still finishes generation.
+Step files use built-in gzip (.pt.gz); the visualization aggregate remains .pt.
 See TOKEN_IMPORTANCE_GENERATION_README.md for the schema and storage estimate.
 """
 
@@ -27,6 +28,7 @@ from __future__ import annotations
 
 from contextlib import contextmanager
 import csv
+import gzip
 import importlib.metadata
 import json
 import logging
@@ -129,6 +131,7 @@ def create_run_metadata(config, settings, root, data_file, records, device, dtyp
         "token_scope": "all_sequence_positions; padding identified and excluded from summaries",
         "reference_pipeline": "inference_t2i.py -> native t2i_generate -> native multimodal forward",
         "effective_sampling": settings,
+        "step_file_format": "torch.save + gzip", "step_compression_level": 6,
         "base_seed": int(config.get("seed", 42)),
         "device": str(device), "dtype": str(dtype).removeprefix("torch."),
         "versions": versions,
@@ -394,10 +397,17 @@ def build_step_payload(sample, run_id, inputs, branch, layers, step, timestep, l
 
 
 def save_step(output_dir, payload, writer, manifest):
-    """Stream features to disk; layer statistics exclude right-padding rows."""
+    """Stream losslessly compressed features; statistics exclude padding."""
     sample = payload["sample"]
-    filename = f"sample_{sample['record_index']:06d}_step_{sample['step_index']:04d}_{sample['cfg_branch']}.pt"
-    atomic_torch_save(output_dir / filename, payload)
+    filename = f"sample_{sample['record_index']:06d}_step_{sample['step_index']:04d}_{sample['cfg_branch']}.pt.gz"
+    path = output_dir / filename
+    temporary = path.with_name(path.name + ".tmp")
+    try:
+        with gzip.open(temporary, "wb", compresslevel=6) as file:
+            torch.save(payload, file)
+        temporary.replace(path)  # Publish only after the gzip stream is complete.
+    finally:
+        temporary.unlink(missing_ok=True)
     for layer, data in payload["layers"].items():
         scores = data["update_l2"][payload["valid_token_mask"]]
         writer.writerow({
@@ -407,7 +417,8 @@ def save_step(output_dir, payload, writer, manifest):
             "min": scores.min().item(), "mean": scores.mean().item(),
             "median": scores.median().item(), "max": scores.max().item(),
         })
-    manifest.write(json.dumps({"file": filename, **sample}, ensure_ascii=False) + "\n")
+    manifest.write(json.dumps({"file": filename, "compression": "gzip", "size_bytes": path.stat().st_size,
+                               **sample}, ensure_ascii=False) + "\n")
     manifest.flush()
 
 
@@ -520,7 +531,8 @@ def main():
         estimate = (vectors * len(resources.layer_ids) * len(settings["recorded_steps"])
                     * len(settings["recorded_cfg_branches"]) * int(config.dataset.preprocessing.max_seq_length)
                     * resources.model.showo.model.config.hidden_size * torch.empty((), dtype=dtype).element_size())
-        LOGGER.info("Feature storage per prompt: approximately %.2f GiB; scores and latents are additional", estimate / 2**30)
+        LOGGER.info("Uncompressed features per prompt: approximately %.2f GiB; step files use gzip. "
+                    "Actual disk size depends on compression; scores and latents are additional", estimate / 2**30)
 
         # --- 5. Generate each image and stream its token measurements ---
         fields = ["record_index", "step_index", "denoising_timestep", "cfg_branch", "layer",
