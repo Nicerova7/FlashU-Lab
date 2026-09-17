@@ -1,13 +1,13 @@
 # coding=utf-8
 """Collect loss-aware gradient x update scores for generation tokens.
 
-Each JSON record must contain prompt and image_path. The image is the flow-matching
-target; only the conditional sequence is scored.
+For each prompt, Show-o2 first generates a reference image without gradients. The
+generated latent then becomes the target for the flow-matching gradient pass.
 
 Run from the repository root:
   python -m evaluation.calculate_gradient_update_generation \
     config=configs/showo2_1.5b_demo_432x432.yaml \
-    generation_data_file=prompts/generation_with_images.json \
+    generation_data_file=prompts/generation_counting_spatial_40.json \
     num_prompts=1 layers=all steps=all output_dir=gradient_update_generation
 """
 
@@ -17,7 +17,7 @@ from contextlib import contextmanager
 import csv
 import gzip
 import logging
-from pathlib import Path
+import math
 import sys
 import time
 import uuid
@@ -26,13 +26,13 @@ import torch
 import torch.nn.functional as F
 
 from evaluation.calculate_token_importance_generation import (
+    create_generation_sampler,
     load_generation_examples,
     prepare_generation_inputs,
 )
 from evaluation.calculate_token_importance_understanding import (
     atomic_json,
     atomic_torch_save,
-    encode_image,
     file_sha256,
     find_repository_root,
     load_config,
@@ -55,11 +55,20 @@ def experiment_settings(config):
         raise ValueError("num_inference_steps must be at least 2")
     steps = select_layers(config.get("steps", "all"), count - 1)
     times = torch.linspace(0.0, 1.0, count)[:-1]
+    reference_guidance = float(
+        config.get("reference_guidance_scale", config.transport.guidance_scale)
+    )
+    if not math.isfinite(reference_guidance) or reference_guidance < 0:
+        raise ValueError("reference_guidance_scale must be finite and nonnegative")
     return {
         "num_time_grid_points": count,
         "recorded_steps": steps,
         "timesteps": [float(times[index]) for index in steps],
         "guidance_scale": 0.0,
+        "reference_guidance_scale": reference_guidance,
+        "atol": float(config.transport.atol),
+        "rtol": float(config.transport.rtol),
+        "time_shifting_factor": config.get("time_shifting_factor", None),
     }
 
 
@@ -155,14 +164,59 @@ def save_step(path, payload):
         temporary.unlink(missing_ok=True)
 
 
+@torch.no_grad()
+def generate_reference(record_index, inputs, settings, resources, output_dir):
+    from PIL import Image
+    from utils import denorm
+
+    patch_size = int(resources.model.config.patch_size)
+    noise = torch.randn(
+        (
+            1,
+            int(resources.model.config.image_latent_dim),
+            inputs["grid_height"] * patch_size,
+            inputs["grid_width"] * patch_size,
+        ),
+        device=resources.device,
+        dtype=resources.dtype,
+    )
+    sampler = create_generation_sampler(settings)
+    sampler_noise = noise
+    if settings["reference_guidance_scale"] > 0:
+        sampler_noise = torch.cat([noise, noise])
+    trajectory = sampler(
+        sampler_noise,
+        resources.model.t2i_generate,
+        text_tokens=inputs["text_tokens"],
+        attention_mask=inputs["attention_mask"],
+        modality_positions=inputs["modality_positions"],
+        max_seq_len=inputs["sequence_length"],
+        guidance_scale=settings["reference_guidance_scale"],
+    )
+    reference_latents = trajectory[-1, :1].to(
+        device=resources.device, dtype=resources.dtype
+    )
+    pixels = resources.vae.batch_decode(reference_latents.unsqueeze(2)).squeeze(2)
+    image_path = output_dir / f"sample_{record_index:06d}_reference.png"
+    Image.fromarray(denorm(pixels)[0]).save(image_path)
+    return reference_latents, noise, image_path
+
+
 def measure_one(record, record_index, config, settings, resources, output_dir, run, writer):
     started = time.perf_counter()
     seed = run["base_seed"] + record_index
     seed_example(seed, resources.device)
-    reference_latents, original_size = encode_image(record["image_path"], resources, config)
-    noise = torch.randn_like(reference_latents)
-    target_velocity = reference_latents - noise
     inputs = prepare_generation_inputs(record, resources, config, settings)
+    reference_inputs = prepare_generation_inputs(
+        record,
+        resources,
+        config,
+        {"guidance_scale": settings["reference_guidance_scale"]},
+    )
+    reference_latents, noise, image_path = generate_reference(
+        record_index, reference_inputs, settings, resources, output_dir
+    )
+    target_velocity = reference_latents - noise
     layout = inputs["branches"]["conditional"]
     matrices = []
     losses = []
@@ -218,14 +272,14 @@ def measure_one(record, record_index, config, settings, resources, output_dir, r
         losses.append(loss)
         LOGGER.info("Sample %d | step %d | loss %.6f", record_index, step, loss)
 
-    image_path = Path(record["image_path"])
     sample = {
         "sample_id": f"{run['dataset_sha256'][:12]}:{record_index}",
         "record_index": record_index,
         "source_record": record,
-        "image_path": str(image_path.resolve()),
-        "image_sha256": file_sha256(image_path),
-        "original_image_size_wh": original_size,
+        "reference_image_path": str(image_path.resolve()),
+        "reference_image_sha256": file_sha256(image_path),
+        "reference_source": "generated_by_showo2",
+        "reference_guidance_scale": settings["reference_guidance_scale"],
         "seed": seed,
         "task": "generation",
         "phase": "flow_matching",
@@ -261,9 +315,6 @@ def main():
     root = find_repository_root()
     settings = experiment_settings(config)
     data_file, records, start = load_generation_examples(config)
-    for index, record in enumerate(records, start):
-        if not isinstance(record.get("image_path"), str) or not Path(record["image_path"]).is_file():
-            raise FileNotFoundError(f"Record {index} needs an existing image_path")
     if "output_dir" not in config:
         config.output_dir = "gradient_update_generation"
     output_dir = prepare_output_directory(config)
@@ -275,7 +326,8 @@ def main():
         "status": "running",
         "task": "generation",
         "label_definition": "abs(dL/dh_out dot (h_out-h_in))",
-        "loss": "conditional_linear_path_flow_matching_mse",
+        "loss": "conditional_linear_path_flow_matching_mse_self_generated_reference",
+        "loss_status": "self_generated_pseudo_target_not_ground_truth_flow_matching_loss",
         "base_seed": int(config.get("seed", 42)),
         "dataset_path": str(data_file.resolve()),
         "dataset_sha256": file_sha256(data_file),
