@@ -1,4 +1,9 @@
-# Understanding prefill: token importance dataset
+# Understanding prefill: representation-change dataset
+
+**Current research framing:** see [Research direction](RESEARCH_DIRECTION.md).
+The L2 score is a representation-change score / importance proxy pending validation.
+The next questions are how to define behavioral token importance and what structure
+Understanding and Generation share; an MLP is not a predetermined next step.
 
 This script runs one unchanged Show-o2 understanding prefill per example and
 saves one candidate label per input token at each decoder layer. All token types
@@ -140,9 +145,9 @@ For each layer in a sample file:
 
 - `input_features`: `[N, d]`, in the model's dtype. These are the token
   vectors entering that decoder layer, before its input normalization.
-- `update_l2`: `[N]`, FP32. These are the **candidate MLP labels**.
+- `update_l2`: `[N]`, FP32. These are the **representation-change scores**.
 - `hidden_out`: `[N, d]`, only when `save_hidden_out=true`. This is optional
-  verification data, not a proposed MLP input.
+  data for verification and representation analysis.
 
 Here `N` is the complete prefill sequence length for that example; `d` is the
 hidden-vector width. Rows in all three tensors align with `token_positions` and
@@ -241,7 +246,7 @@ overlays. An explicitly supplied missing or different image raises an error.
 Use `--output-dir /path/to/plots` to choose another destination. Rerunning the
 same visualization replaces its four PNG files; the saved scores are unchanged.
 
-## Read labels for the future MLP
+## Read saved representations and change scores
 
 ```python
 import torch
@@ -313,12 +318,14 @@ measurement of inference speedup. The collector executes the unchanged decoder
 layers without a vocabulary projection, which is sufficient to observe these layer
 boundaries. It does not evaluate answers or establish safe removal.
 
-## Validation before training a predictor
+## Validate the importance proxy
 
-After collecting candidate labels, compare low-score bypass with random bypass at
-the same budget using an actual understanding-quality measure. This script prepares
-the dataset for that next experiment; it does not establish the labels' predictive
-validity or train an MLP predictor.
+One candidate validation is to compare low-score bypass with random bypass at
+the same budget using an actual understanding-quality measure. Specify which
+token-associated computation is bypassed and measure the resulting behavior or
+loss change. Whether L2 should be kept, complemented, or replaced remains open.
+The collector does not measure these intervention effects. Study importance and
+U–G structure before choosing a predictive objective or model family.
 
 Development checks cover known numerical labels, saved feature/label and matrix
 alignment, all token types, optional time inclusion, variable sequence lengths,

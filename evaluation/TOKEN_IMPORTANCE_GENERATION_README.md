@@ -1,5 +1,10 @@
 # Generation: token-update dataset
 
+**Current research framing:** see [Research direction](RESEARCH_DIRECTION.md).
+Treat the L2 score as representation change / an importance proxy pending validation.
+Preserve the step dimension for initial U–G analysis; model form and token
+correspondence remain open questions.
+
 `calculate_token_importance_generation.py` measures every sequence position at
 selected decoder layers and denoising evaluations during a complete Show-o2
 text-to-image run. The score is the same candidate metric used for understanding:
@@ -59,7 +64,7 @@ and latents. `cfg_branches=both` doubles this; `save_hidden_out=true` adds anoth
 copy of the vectors. For a smaller first dataset use `steps=[0,24,48]` (about
 252 MiB of uncompressed input features). Gzip reduces the on-disk size by a
 data-dependent amount. The complete generation trajectory still runs.
-`save_input_features=false` keeps scores and metadata but omits predictor inputs.
+`save_input_features=false` keeps scores and metadata but omits input representations.
 
 ## What runs, and where
 
@@ -155,7 +160,7 @@ with gzip.open(f"{output_dir}/sample_000000_step_0000_conditional.pt.gz", "rb") 
 valid = step["valid_token_mask"]
 X = step["layers"]["13"]["input_features"][valid]  # [N_valid, d]
 y = step["layers"]["13"]["update_l2"][valid]       # [N_valid]
-# These aligned vectors and scores are candidate examples for a future predictor.
+# These aligned vectors and scores support representation and proxy-validation analysis.
 # Retain layer, timestep, task, branch, sample identity, and token metadata.
 ```
 
@@ -181,7 +186,7 @@ updates cannot depend on the later image/time tokens and should stay constant ac
 steps apart from numerical effects. Understanding uses a different order and mask;
 cross-task differences can reflect layout and latent state as well as task.
 Keep related prompts, seeds, steps, and branches together
-when splitting a future predictor dataset.
+when splitting data for any future model evaluation.
 
 Results stream to disk rather than retaining all feature tensors in memory. A
 nonempty output directory is rejected; interrupted runs retain partial files and
@@ -257,6 +262,8 @@ branch was saved during collection. Branches are displayed separately.
 | `plot_settings.json` | Source hash, branch, independent selections, averaging definitions, color limits, and output filenames |
 
 Every run writes **seven PNG files**, including when fewer panels are available.
+Start U–G analysis with the step-resolved figures and full `[L, S, N]` tensor.
+The averaged figures are secondary summaries and do not replace the step dimension.
 All averages use the entire recorded axes, not just the displayed selections:
 
 ```text
