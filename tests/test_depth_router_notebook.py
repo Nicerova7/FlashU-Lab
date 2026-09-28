@@ -143,23 +143,30 @@ class TinyBackbone(torch.nn.Module):
 
 
 class NotebookTests(unittest.TestCase):
-    def test_original_splits_and_no_leakage(self):
+    def test_fresh_stratified_splits_and_no_leakage(self):
         discover = notebook_functions()["discover_data"]
         with tempfile.TemporaryDirectory() as temporary:
             u_root, g_root = write_dataset(Path(temporary))
             examples = discover(u_root, g_root, CATEGORIES)
             counts = Counter((x["task"], x["split"]) for x in examples)
-            self.assertEqual(counts, {("U", "train"): 16, ("U", "val"): 4, ("U", "test"): 20,
-                                      ("G", "train"): 8, ("G", "val"): 2, ("G", "test"): 30})
-            for category, (val, test) in zip(CATEGORIES, [(1, 0), (3, 5), (0, 1), (5, 1)]):
-                split = {x["index"]: x["split"] for x in examples if x["category"] == f"U/{category}"}
-                self.assertEqual((split[val], split[test]), ("val", "test"))
-            self.assertEqual([x["index"] for x in examples if x["task"] == "G" and x["split"] == "val"], [2, 3])
-            self.assertEqual([x["index"] for x in examples if x["task"] == "G" and x["cohort"] == "original" and x["split"] == "test"], [1, 6])
-            self.assertTrue(all(x["split"] == "test" for x in examples if x["cohort"] == "new"))
+            self.assertEqual(counts, {("U", "train"): 28, ("U", "val"): 4, ("U", "test"): 8,
+                                      ("G", "train"): 28, ("G", "val"): 4, ("G", "test"): 8})
+            for category in CATEGORIES:
+                category_counts = Counter(
+                    x["split"] for x in examples if x["category"] == f"U/{category}"
+                )
+                self.assertEqual(category_counts, {"train": 7, "val": 1, "test": 2})
+            self.assertEqual(
+                sorted(x["index"] for x in examples if x["task"] == "G" and x["split"] == "val"),
+                [2, 3, 11, 14],
+            )
+            self.assertEqual(
+                sorted(x["index"] for x in examples if x["task"] == "G" and x["split"] == "test"),
+                [15, 16, 19, 20, 23, 32, 36, 37],
+            )
             for path, field, duplicate in [
-                (u_root / "counting/sample_000006.pt", "image_sha256", "counting/2"),
-                (g_root / "sample_000012.pt", "prompt", "  PROMPT   0 "),
+                (u_root / "counting/sample_000008.pt", "image_sha256", "counting/2"),
+                (g_root / "sample_000020.pt", "prompt", "  PROMPT   0 "),
             ]:
                 payload = torch.load(path, weights_only=True)
                 target = payload["sample"] if field == "image_sha256" else payload["sample"]["source_record"]
@@ -201,7 +208,7 @@ class NotebookTests(unittest.TestCase):
 
     def test_compact_training_full_token_evaluation_and_depth_gate(self):
         ns, source = notebook_functions(), FakeSource()
-        examples = [dict(uid=f"{split}/{task}", task=task, category=task, split=split, cohort="new",
+        examples = [dict(uid=f"{split}/{task}", task=task, category=task, split=split,
                          steps=[-1] if task == "U" else [0, 1], feature_dim=1,
                          dtype="bfloat16", n_valid_tokens=10)
                     for split in ("train", "val", "test") for task in ("U", "G")]
