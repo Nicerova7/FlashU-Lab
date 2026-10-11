@@ -39,6 +39,11 @@ Run its five cells in order:
 4. Run dense, shared, and specialized inference.
 5. Compare counting accuracy and time; save results.
 
+Cases marked `pending` can be previewed in step 2; step 4 requires every case to be
+`verified`. Confirm counts from the cropped images before changing their status.
+The current ten replacement JPEGs are bundled in `crop_replacements.zip` for
+manual upload to the existing Drive image folder. The ZIP and JPEGs are ignored by Git.
+
 Routing skips 10% of image-token FFN rows (rounded to an integer keep count) during
 prefill in layers 0–26. Attention, text, layer 27, and answer decoding stay dense.
 Specialized routing applies `u` at every routed layer. The default runs three timing

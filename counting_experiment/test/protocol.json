@@ -20,7 +20,7 @@
     "G": "GenEval counting correct rate",
     "visual_quality": "blind paired A/B/tie audit, separate from counting"
   },
-  "state": "pending_training_provenance_check",
+  "state": "pending_crop_review_and_training_provenance_check",
   "exclusion_files": [
     "prompts\\understanding_attribute_combinations_20.json",
     "prompts\\understanding_calibration.json",
@@ -123,11 +123,120 @@
       "new_coco_image_id": 44699,
       "old_object_class": "chair",
       "new_object_class": "sheep"
+    },
+    {
+      "id": "U_0014",
+      "target_count": 2,
+      "old_coco_image_id": 463527,
+      "new_coco_image_id": 77396,
+      "old_object_class": "bottle",
+      "new_object_class": "cat",
+      "reason": "Original center crop changed or obscured the reference count.",
+      "review_status": "pending_crop_review",
+      "date": "2026-10-11"
+    },
+    {
+      "id": "U_0020",
+      "target_count": 3,
+      "old_coco_image_id": 166287,
+      "new_coco_image_id": 79651,
+      "old_object_class": "cow",
+      "new_object_class": "bottle",
+      "reason": "Original center crop changed or obscured the reference count.",
+      "review_status": "pending_crop_review",
+      "date": "2026-10-11"
+    },
+    {
+      "id": "U_0021",
+      "target_count": 3,
+      "old_coco_image_id": 16958,
+      "new_coco_image_id": 41888,
+      "old_object_class": "chair",
+      "new_object_class": "bird",
+      "reason": "Original center crop changed or obscured the reference count.",
+      "review_status": "pending_crop_review",
+      "date": "2026-10-11"
+    },
+    {
+      "id": "U_0022",
+      "target_count": 3,
+      "old_coco_image_id": 501243,
+      "new_coco_image_id": 447313,
+      "old_object_class": "zebra",
+      "new_object_class": "zebra",
+      "reason": "Original center crop changed or obscured the reference count.",
+      "review_status": "pending_crop_review",
+      "date": "2026-10-11"
+    },
+    {
+      "id": "U_0023",
+      "target_count": 3,
+      "old_coco_image_id": 110638,
+      "new_coco_image_id": 62353,
+      "old_object_class": "elephant",
+      "new_object_class": "giraffe",
+      "reason": "Original center crop changed or obscured the reference count.",
+      "review_status": "pending_crop_review",
+      "date": "2026-10-11"
+    },
+    {
+      "id": "U_0026",
+      "target_count": 3,
+      "old_coco_image_id": 81766,
+      "new_coco_image_id": 235252,
+      "old_object_class": "dog",
+      "new_object_class": "giraffe",
+      "reason": "Original center crop changed or obscured the reference count.",
+      "review_status": "pending_crop_review",
+      "date": "2026-10-11"
+    },
+    {
+      "id": "U_0028",
+      "target_count": 3,
+      "old_coco_image_id": 228144,
+      "new_coco_image_id": 578236,
+      "old_object_class": "chair",
+      "new_object_class": "bird",
+      "reason": "Original center crop changed or obscured the reference count.",
+      "review_status": "pending_crop_review",
+      "date": "2026-10-11"
+    },
+    {
+      "id": "U_0031",
+      "target_count": 4,
+      "old_coco_image_id": 329447,
+      "new_coco_image_id": 166259,
+      "old_object_class": "cow",
+      "new_object_class": "bird",
+      "reason": "Original center crop changed or obscured the reference count.",
+      "review_status": "pending_crop_review",
+      "date": "2026-10-11"
+    },
+    {
+      "id": "U_0033",
+      "target_count": 4,
+      "old_coco_image_id": 389451,
+      "new_coco_image_id": 101780,
+      "old_object_class": "cow",
+      "new_object_class": "giraffe",
+      "reason": "Original center crop changed or obscured the reference count.",
+      "review_status": "pending_crop_review",
+      "date": "2026-10-11"
+    },
+    {
+      "id": "U_0034",
+      "target_count": 4,
+      "old_coco_image_id": 492758,
+      "new_coco_image_id": 514508,
+      "old_object_class": "chair",
+      "new_object_class": "person",
+      "reason": "Original center crop changed or obscured the reference count.",
+      "review_status": "pending_crop_review",
+      "date": "2026-10-11"
     }
   ],
   "u_review_counts": {
-    "verified": 40,
-    "pending": 0,
-    "replace": 0
+    "verified": 30,
+    "pending": 10
   }
 }

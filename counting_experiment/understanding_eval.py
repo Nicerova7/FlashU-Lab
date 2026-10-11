@@ -38,7 +38,6 @@ def load_test_cases(test_dir, expected_images=40, image_dir=None):
     image_dir = Path(image_dir) if image_dir is not None else test_dir / "images"
     rows = json.loads((test_dir / "understanding.json").read_text(encoding="utf-8"))
     assert len(rows) == expected_images, f"Expected {expected_images} test images."
-    assert all(row["review_status"] == "verified" for row in rows), "Review the reference counts first."
     cases = []
     for row in rows:
         image = image_dir / Path(row["image_path"]).name
@@ -311,6 +310,7 @@ def summarize_evaluation(rows, modes=("dense", "shared", "specialized")):
 def run_evaluation(cases, resources, config, scorers, results_dir, seed=1001,
                    keep_fraction=.90, max_new_tokens=16, repeats=3):
     """Warm each mode, then measure matched cases with rotating mode order."""
+    assert all(case["review_status"] == "verified" for case in cases), "Review the cropped reference counts first."
     modes = ("dense", "shared", "specialized")
     results_dir = Path(results_dir)
     results_dir.mkdir(parents=True, exist_ok=False)

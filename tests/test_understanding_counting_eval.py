@@ -135,8 +135,11 @@ class UnderstandingEvaluationTests(unittest.TestCase):
                     check(cases, [used])
             manifest[0]["review_status"] = "pending"
             (root / "understanding.json").write_text(json.dumps(manifest), encoding="utf-8")
-            with self.assertRaisesRegex(AssertionError, "Review the reference counts"):
-                self.ns["load_test_cases"](root, 1)
+            pending = self.ns["load_test_cases"](root, 1)
+            self.assertEqual(pending[0]["review_status"], "pending")
+            with self.assertRaisesRegex(AssertionError, "Review the cropped reference counts"):
+                self.ns["run_evaluation"](pending, None, None, {}, root / "results")
+            self.assertFalse((root / "results").exists())
 
     def test_images_can_live_in_drive_separate_from_repository_manifest(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -238,7 +241,8 @@ class UnderstandingEvaluationTests(unittest.TestCase):
             root = Path(temporary)
             image = root / "test.jpg"
             Image.new("RGB", (2, 2)).save(image)
-            cases = [dict(id=name, target_count=2, resolved_image=str(image)) for name in ("a", "b")]
+            cases = [dict(id=name, target_count=2, resolved_image=str(image), review_status="verified")
+                     for name in ("a", "b")]
             with patch.dict(self.ns, {"timed_inference": inference}):
                 rows = self.ns["run_evaluation"](cases, None, None, {}, root / "results")
             self.assertEqual(len(calls), 21)

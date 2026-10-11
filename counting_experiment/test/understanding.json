@@ -214,19 +214,19 @@
     "id": "U_0013"
   },
   {
-    "coco_image_id": 463527,
-    "object_class": "bottle",
+    "coco_image_id": 77396,
+    "object_class": "cat",
     "target_count": 2,
-    "prompt": "How many bottles are there?",
+    "prompt": "How many cats are there?",
     "expected_answer": "two",
-    "image_path": "images/000000463527.jpg",
-    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000463527.jpg",
+    "image_path": "images/000000077396.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000077396.jpg",
     "annotation_ids": [
-      80676,
-      81365
+      47243,
+      47837
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "verified",
+    "review_status": "pending",
     "id": "U_0014"
   },
   {
@@ -310,71 +310,71 @@
     "id": "U_0019"
   },
   {
-    "coco_image_id": 166287,
-    "object_class": "cow",
+    "coco_image_id": 79651,
+    "object_class": "bottle",
     "target_count": 3,
-    "prompt": "How many cows are there?",
+    "prompt": "How many bottles are there?",
     "expected_answer": "three",
-    "image_path": "images/000000166287.jpg",
-    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000166287.jpg",
+    "image_path": "images/000000079651.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000079651.jpg",
     "annotation_ids": [
-      73614,
-      74188,
-      2177246
+      83672,
+      89208,
+      89896
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "verified",
+    "review_status": "pending",
     "id": "U_0020"
   },
   {
-    "coco_image_id": 16958,
-    "object_class": "chair",
+    "coco_image_id": 41888,
+    "object_class": "bird",
     "target_count": 3,
-    "prompt": "How many chairs are there?",
+    "prompt": "How many birds are there?",
     "expected_answer": "three",
-    "image_path": "images/000000016958.jpg",
-    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000016958.jpg",
+    "image_path": "images/000000041888.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000041888.jpg",
     "annotation_ids": [
-      376025,
-      382759,
-      1939880
+      36154,
+      42626,
+      42791
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "verified",
+    "review_status": "pending",
     "id": "U_0021"
   },
   {
-    "coco_image_id": 501243,
+    "coco_image_id": 447313,
     "object_class": "zebra",
     "target_count": 3,
     "prompt": "How many zebras are there?",
     "expected_answer": "three",
-    "image_path": "images/000000501243.jpg",
-    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000501243.jpg",
+    "image_path": "images/000000447313.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000447313.jpg",
     "annotation_ids": [
-      589371,
-      590427,
-      591924
+      588427,
+      592784,
+      593141
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "verified",
+    "review_status": "pending",
     "id": "U_0022"
   },
   {
-    "coco_image_id": 110638,
-    "object_class": "elephant",
+    "coco_image_id": 62353,
+    "object_class": "giraffe",
     "target_count": 3,
-    "prompt": "How many elephants are there?",
+    "prompt": "How many giraffes are there?",
     "expected_answer": "three",
-    "image_path": "images/000000110638.jpg",
-    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000110638.jpg",
+    "image_path": "images/000000062353.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000062353.jpg",
     "annotation_ids": [
-      584078,
-      584890,
-      585145
+      595220,
+      597942,
+      600431
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "verified",
+    "review_status": "pending",
     "id": "U_0023"
   },
   {
@@ -412,20 +412,20 @@
     "id": "U_0025"
   },
   {
-    "coco_image_id": 81766,
-    "object_class": "dog",
+    "coco_image_id": 235252,
+    "object_class": "giraffe",
     "target_count": 3,
-    "prompt": "How many dogs are there?",
+    "prompt": "How many giraffes are there?",
     "expected_answer": "three",
-    "image_path": "images/000000081766.jpg",
-    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000081766.jpg",
+    "image_path": "images/000000235252.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000235252.jpg",
     "annotation_ids": [
-      2188,
-      14835,
-      17520
+      595168,
+      596785,
+      597237
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "verified",
+    "review_status": "pending",
     "id": "U_0026"
   },
   {
@@ -446,20 +446,20 @@
     "id": "U_0027"
   },
   {
-    "coco_image_id": 228144,
-    "object_class": "chair",
+    "coco_image_id": 578236,
+    "object_class": "bird",
     "target_count": 3,
-    "prompt": "How many chairs are there?",
+    "prompt": "How many birds are there?",
     "expected_answer": "three",
-    "image_path": "images/000000228144.jpg",
-    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000228144.jpg",
+    "image_path": "images/000000578236.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000578236.jpg",
     "annotation_ids": [
-      376976,
-      387794,
-      388140
+      41056,
+      1814066,
+      2065843
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "verified",
+    "review_status": "pending",
     "id": "U_0028"
   },
   {
@@ -498,21 +498,21 @@
     "id": "U_0030"
   },
   {
-    "coco_image_id": 329447,
-    "object_class": "cow",
+    "coco_image_id": 166259,
+    "object_class": "bird",
     "target_count": 4,
-    "prompt": "How many cows are there?",
+    "prompt": "How many birds are there?",
     "expected_answer": "four",
-    "image_path": "images/000000329447.jpg",
-    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000329447.jpg",
+    "image_path": "images/000000166259.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000166259.jpg",
     "annotation_ids": [
-      75762,
-      76402,
-      77087,
-      78029
+      36967,
+      41598,
+      42867,
+      43297
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "verified",
+    "review_status": "pending",
     "id": "U_0031"
   },
   {
@@ -534,39 +534,39 @@
     "id": "U_0032"
   },
   {
-    "coco_image_id": 389451,
-    "object_class": "cow",
+    "coco_image_id": 101780,
+    "object_class": "giraffe",
     "target_count": 4,
-    "prompt": "How many cows are there?",
+    "prompt": "How many giraffes are there?",
     "expected_answer": "four",
-    "image_path": "images/000000389451.jpg",
-    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000389451.jpg",
+    "image_path": "images/000000101780.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000101780.jpg",
     "annotation_ids": [
-      1819685,
-      1819779,
-      1820059,
-      1820552
+      599670,
+      599981,
+      1823260,
+      1823356
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "verified",
+    "review_status": "pending",
     "id": "U_0033"
   },
   {
-    "coco_image_id": 492758,
-    "object_class": "chair",
+    "coco_image_id": 514508,
+    "object_class": "person",
     "target_count": 4,
-    "prompt": "How many chairs are there?",
+    "prompt": "How many people are there?",
     "expected_answer": "four",
-    "image_path": "images/000000492758.jpg",
-    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000492758.jpg",
+    "image_path": "images/000000514508.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000514508.jpg",
     "annotation_ids": [
-      105506,
-      106338,
-      2126100,
-      2126413
+      207159,
+      226785,
+      230932,
+      237693
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "verified",
+    "review_status": "pending",
     "id": "U_0034"
   },
   {
