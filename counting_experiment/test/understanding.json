@@ -1,0 +1,662 @@
+[
+  {
+    "coco_image_id": 94336,
+    "object_class": "cat",
+    "target_count": 1,
+    "prompt": "How many cats are there?",
+    "expected_answer": "one",
+    "image_path": "images/000000094336.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000094336.jpg",
+    "annotation_ids": [
+      50314
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0000"
+  },
+  {
+    "coco_image_id": 491497,
+    "object_class": "chair",
+    "target_count": 1,
+    "prompt": "How many chairs are there?",
+    "expected_answer": "one",
+    "image_path": "images/000000491497.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000491497.jpg",
+    "annotation_ids": [
+      101073
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0001"
+  },
+  {
+    "coco_image_id": 138492,
+    "object_class": "dog",
+    "target_count": 1,
+    "prompt": "How many dogs are there?",
+    "expected_answer": "one",
+    "image_path": "images/000000138492.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000138492.jpg",
+    "annotation_ids": [
+      10998
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0002"
+  },
+  {
+    "coco_image_id": 572517,
+    "object_class": "bear",
+    "target_count": 1,
+    "prompt": "How many bears are there?",
+    "expected_answer": "one",
+    "image_path": "images/000000572517.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000572517.jpg",
+    "annotation_ids": [
+      586476
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0003"
+  },
+  {
+    "coco_image_id": 55072,
+    "object_class": "giraffe",
+    "target_count": 1,
+    "prompt": "How many giraffes are there?",
+    "expected_answer": "one",
+    "image_path": "images/000000055072.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000055072.jpg",
+    "annotation_ids": [
+      598890
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0004"
+  },
+  {
+    "coco_image_id": 90062,
+    "object_class": "cow",
+    "target_count": 1,
+    "prompt": "How many cows are there?",
+    "expected_answer": "one",
+    "image_path": "images/000000090062.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000090062.jpg",
+    "annotation_ids": [
+      2177047
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0005"
+  },
+  {
+    "coco_image_id": 420230,
+    "object_class": "elephant",
+    "target_count": 1,
+    "prompt": "How many elephants are there?",
+    "expected_answer": "one",
+    "image_path": "images/000000420230.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000420230.jpg",
+    "annotation_ids": [
+      583412
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0006"
+  },
+  {
+    "coco_image_id": 138115,
+    "object_class": "orange",
+    "target_count": 1,
+    "prompt": "How many oranges are there?",
+    "expected_answer": "one",
+    "image_path": "images/000000138115.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000138115.jpg",
+    "annotation_ids": [
+      1052575
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0007"
+  },
+  {
+    "coco_image_id": 117525,
+    "object_class": "dog",
+    "target_count": 1,
+    "prompt": "How many dogs are there?",
+    "expected_answer": "one",
+    "image_path": "images/000000117525.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000117525.jpg",
+    "annotation_ids": [
+      9977
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0008"
+  },
+  {
+    "coco_image_id": 445439,
+    "object_class": "zebra",
+    "target_count": 1,
+    "prompt": "How many zebras are there?",
+    "expected_answer": "one",
+    "image_path": "images/000000445439.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000445439.jpg",
+    "annotation_ids": [
+      590536
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0009"
+  },
+  {
+    "coco_image_id": 150726,
+    "object_class": "giraffe",
+    "target_count": 2,
+    "prompt": "How many giraffes are there?",
+    "expected_answer": "two",
+    "image_path": "images/000000150726.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000150726.jpg",
+    "annotation_ids": [
+      598471,
+      601273
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0010"
+  },
+  {
+    "coco_image_id": 229753,
+    "object_class": "giraffe",
+    "target_count": 2,
+    "prompt": "How many giraffes are there?",
+    "expected_answer": "two",
+    "image_path": "images/000000229753.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000229753.jpg",
+    "annotation_ids": [
+      600293,
+      600957
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0011"
+  },
+  {
+    "coco_image_id": 229858,
+    "object_class": "cow",
+    "target_count": 2,
+    "prompt": "How many cows are there?",
+    "expected_answer": "two",
+    "image_path": "images/000000229858.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000229858.jpg",
+    "annotation_ids": [
+      1820301,
+      1820670
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0012"
+  },
+  {
+    "coco_image_id": 142620,
+    "object_class": "chair",
+    "target_count": 2,
+    "prompt": "How many chairs are there?",
+    "expected_answer": "two",
+    "image_path": "images/000000142620.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000142620.jpg",
+    "annotation_ids": [
+      376992,
+      378245
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0013"
+  },
+  {
+    "coco_image_id": 463527,
+    "object_class": "bottle",
+    "target_count": 2,
+    "prompt": "How many bottles are there?",
+    "expected_answer": "two",
+    "image_path": "images/000000463527.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000463527.jpg",
+    "annotation_ids": [
+      80676,
+      81365
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0014"
+  },
+  {
+    "coco_image_id": 562561,
+    "object_class": "dog",
+    "target_count": 2,
+    "prompt": "How many dogs are there?",
+    "expected_answer": "two",
+    "image_path": "images/000000562561.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000562561.jpg",
+    "annotation_ids": [
+      2901,
+      14990
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0015"
+  },
+  {
+    "coco_image_id": 88250,
+    "object_class": "elephant",
+    "target_count": 2,
+    "prompt": "How many elephants are there?",
+    "expected_answer": "two",
+    "image_path": "images/000000088250.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000088250.jpg",
+    "annotation_ids": [
+      580782,
+      2175183
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0016"
+  },
+  {
+    "coco_image_id": 478393,
+    "object_class": "cat",
+    "target_count": 2,
+    "prompt": "How many cats are there?",
+    "expected_answer": "two",
+    "image_path": "images/000000478393.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000478393.jpg",
+    "annotation_ids": [
+      47102,
+      49313
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0017"
+  },
+  {
+    "coco_image_id": 290833,
+    "object_class": "zebra",
+    "target_count": 2,
+    "prompt": "How many zebras are there?",
+    "expected_answer": "two",
+    "image_path": "images/000000290833.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000290833.jpg",
+    "annotation_ids": [
+      588335,
+      591006
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0018"
+  },
+  {
+    "coco_image_id": 173033,
+    "object_class": "bear",
+    "target_count": 2,
+    "prompt": "How many bears are there?",
+    "expected_answer": "two",
+    "image_path": "images/000000173033.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000173033.jpg",
+    "annotation_ids": [
+      586679,
+      1411671
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0019"
+  },
+  {
+    "coco_image_id": 166287,
+    "object_class": "cow",
+    "target_count": 3,
+    "prompt": "How many cows are there?",
+    "expected_answer": "three",
+    "image_path": "images/000000166287.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000166287.jpg",
+    "annotation_ids": [
+      73614,
+      74188,
+      2177246
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0020"
+  },
+  {
+    "coco_image_id": 16958,
+    "object_class": "chair",
+    "target_count": 3,
+    "prompt": "How many chairs are there?",
+    "expected_answer": "three",
+    "image_path": "images/000000016958.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000016958.jpg",
+    "annotation_ids": [
+      376025,
+      382759,
+      1939880
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0021"
+  },
+  {
+    "coco_image_id": 501243,
+    "object_class": "zebra",
+    "target_count": 3,
+    "prompt": "How many zebras are there?",
+    "expected_answer": "three",
+    "image_path": "images/000000501243.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000501243.jpg",
+    "annotation_ids": [
+      589371,
+      590427,
+      591924
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0022"
+  },
+  {
+    "coco_image_id": 110638,
+    "object_class": "elephant",
+    "target_count": 3,
+    "prompt": "How many elephants are there?",
+    "expected_answer": "three",
+    "image_path": "images/000000110638.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000110638.jpg",
+    "annotation_ids": [
+      584078,
+      584890,
+      585145
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0023"
+  },
+  {
+    "coco_image_id": 284296,
+    "object_class": "giraffe",
+    "target_count": 3,
+    "prompt": "How many giraffes are there?",
+    "expected_answer": "three",
+    "image_path": "images/000000284296.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000284296.jpg",
+    "annotation_ids": [
+      594701,
+      600375,
+      601011
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0024"
+  },
+  {
+    "coco_image_id": 68933,
+    "object_class": "zebra",
+    "target_count": 3,
+    "prompt": "How many zebras are there?",
+    "expected_answer": "three",
+    "image_path": "images/000000068933.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000068933.jpg",
+    "annotation_ids": [
+      589793,
+      590407,
+      591281
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0025"
+  },
+  {
+    "coco_image_id": 81766,
+    "object_class": "dog",
+    "target_count": 3,
+    "prompt": "How many dogs are there?",
+    "expected_answer": "three",
+    "image_path": "images/000000081766.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000081766.jpg",
+    "annotation_ids": [
+      2188,
+      14835,
+      17520
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0026"
+  },
+  {
+    "coco_image_id": 64359,
+    "object_class": "zebra",
+    "target_count": 3,
+    "prompt": "How many zebras are there?",
+    "expected_answer": "three",
+    "image_path": "images/000000064359.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000064359.jpg",
+    "annotation_ids": [
+      589008,
+      589536,
+      589933
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0027"
+  },
+  {
+    "coco_image_id": 228144,
+    "object_class": "chair",
+    "target_count": 3,
+    "prompt": "How many chairs are there?",
+    "expected_answer": "three",
+    "image_path": "images/000000228144.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000228144.jpg",
+    "annotation_ids": [
+      376976,
+      387794,
+      388140
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0028"
+  },
+  {
+    "coco_image_id": 445248,
+    "object_class": "elephant",
+    "target_count": 3,
+    "prompt": "How many elephants are there?",
+    "expected_answer": "three",
+    "image_path": "images/000000445248.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000445248.jpg",
+    "annotation_ids": [
+      582374,
+      583161,
+      583821
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0029"
+  },
+  {
+    "coco_image_id": 577149,
+    "object_class": "zebra",
+    "target_count": 4,
+    "prompt": "How many zebras are there?",
+    "expected_answer": "four",
+    "image_path": "images/000000577149.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000577149.jpg",
+    "annotation_ids": [
+      591862,
+      592423,
+      593539,
+      1412523
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0030"
+  },
+  {
+    "coco_image_id": 329447,
+    "object_class": "cow",
+    "target_count": 4,
+    "prompt": "How many cows are there?",
+    "expected_answer": "four",
+    "image_path": "images/000000329447.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000329447.jpg",
+    "annotation_ids": [
+      75762,
+      76402,
+      77087,
+      78029
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0031"
+  },
+  {
+    "coco_image_id": 69106,
+    "object_class": "zebra",
+    "target_count": 4,
+    "prompt": "How many zebras are there?",
+    "expected_answer": "four",
+    "image_path": "images/000000069106.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000069106.jpg",
+    "annotation_ids": [
+      593125,
+      593177,
+      593198,
+      1412655
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0032"
+  },
+  {
+    "coco_image_id": 389451,
+    "object_class": "cow",
+    "target_count": 4,
+    "prompt": "How many cows are there?",
+    "expected_answer": "four",
+    "image_path": "images/000000389451.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000389451.jpg",
+    "annotation_ids": [
+      1819685,
+      1819779,
+      1820059,
+      1820552
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0033"
+  },
+  {
+    "coco_image_id": 492758,
+    "object_class": "chair",
+    "target_count": 4,
+    "prompt": "How many chairs are there?",
+    "expected_answer": "four",
+    "image_path": "images/000000492758.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000492758.jpg",
+    "annotation_ids": [
+      105506,
+      106338,
+      2126100,
+      2126413
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0034"
+  },
+  {
+    "coco_image_id": 218424,
+    "object_class": "zebra",
+    "target_count": 4,
+    "prompt": "How many zebras are there?",
+    "expected_answer": "four",
+    "image_path": "images/000000218424.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000218424.jpg",
+    "annotation_ids": [
+      589990,
+      593361,
+      593655,
+      1822299
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0035"
+  },
+  {
+    "coco_image_id": 206135,
+    "object_class": "cow",
+    "target_count": 4,
+    "prompt": "How many cows are there?",
+    "expected_answer": "four",
+    "image_path": "images/000000206135.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000206135.jpg",
+    "annotation_ids": [
+      70836,
+      71700,
+      73242,
+      73908
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0036"
+  },
+  {
+    "coco_image_id": 132329,
+    "object_class": "bottle",
+    "target_count": 4,
+    "prompt": "How many bottles are there?",
+    "expected_answer": "four",
+    "image_path": "images/000000132329.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000132329.jpg",
+    "annotation_ids": [
+      78703,
+      87987,
+      95919,
+      96066
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0037"
+  },
+  {
+    "coco_image_id": 44699,
+    "object_class": "sheep",
+    "target_count": 4,
+    "prompt": "How many sheep are there?",
+    "expected_answer": "four",
+    "image_path": "images/000000044699.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000044699.jpg",
+    "annotation_ids": [
+      61007,
+      61102,
+      62803,
+      65288
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0038"
+  },
+  {
+    "coco_image_id": 268729,
+    "object_class": "zebra",
+    "target_count": 4,
+    "prompt": "How many zebras are there?",
+    "expected_answer": "four",
+    "image_path": "images/000000268729.jpg",
+    "source_url": "https://s3.amazonaws.com/images.cocodataset.org/val2017/000000268729.jpg",
+    "annotation_ids": [
+      588745,
+      589544,
+      591031,
+      591272
+    ],
+    "reference_source": "COCO instances_val2017",
+    "review_status": "verified",
+    "id": "U_0039"
+  }
+]

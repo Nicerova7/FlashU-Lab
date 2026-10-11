@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pth
+.ipynb_checkpoints/
+counting_experiment/test/images/
+counting_experiment/results/
+counting_experiment/*.zip

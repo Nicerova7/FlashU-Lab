@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "selection_seed": 20261010,
+  "generation_seeds": [
+    1001,
+    1002,
+    1003,
+    1004
+  ],
+  "u_images": 40,
+  "g_images_per_mode": 40,
+  "modes": [
+    "dense",
+    "shared",
+    "specialized",
+    "depth"
+  ],
+  "metrics": {
+    "U": "exact integer count accuracy",
+    "G": "GenEval counting correct rate",
+    "visual_quality": "blind paired A/B/tie audit, separate from counting"
+  },
+  "state": "pending_training_provenance_check",
+  "exclusion_files": [
+    "prompts\\understanding_attribute_combinations_20.json",
+    "prompts\\understanding_calibration.json",
+    "prompts\\understanding_counting_20.json",
+    "prompts\\understanding_counting_split_a_10.json",
+    "prompts\\understanding_counting_split_b_10.json",
+    "prompts\\understanding_spatial_relations_20.json",
+    "prompts\\understanding_visual_state_traffic_lights_20.json",
+    "prompts\\generation_counting_spatial_40.json"
+  ],
+  "excluded_coco_images": 80,
+  "excluded_generation_prompts": 40,
+  "sources": {
+    "G": "https://raw.githubusercontent.com/djghosh13/geneval/main/prompts/evaluation_metadata.jsonl",
+    "U": "COCO instances_val2017.json"
+  },
+  "source_sha256": {
+    "G": "5c48e0813e812e3c373fa5c8ed07a8f0a483be30272b4427b0559c8048e67c13",
+    "U": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f"
+  },
+  "timing": "Later: warm each mode; CUDA sync; time inference including routing and VAE, excluding load/download, file saving and evaluation. U includes answer decode.",
+  "decisions": "Freeze weights, routing settings, precision, resolution, guidance and sampling before running; use identical prompt/image/seed across modes.",
+  "u_replacements": [
+    {
+      "id": "U_0001",
+      "target_count": 1,
+      "old_coco_image_id": 363840,
+      "new_coco_image_id": 491497,
+      "old_object_class": "chair",
+      "new_object_class": "chair"
+    },
+    {
+      "id": "U_0002",
+      "target_count": 1,
+      "old_coco_image_id": 156643,
+      "new_coco_image_id": 138492,
+      "old_object_class": "bottle",
+      "new_object_class": "dog"
+    },
+    {
+      "id": "U_0010",
+      "target_count": 2,
+      "old_coco_image_id": 119452,
+      "new_coco_image_id": 150726,
+      "old_object_class": "orange",
+      "new_object_class": "giraffe"
+    },
+    {
+      "id": "U_0022",
+      "target_count": 3,
+      "old_coco_image_id": 567898,
+      "new_coco_image_id": 501243,
+      "old_object_class": "orange",
+      "new_object_class": "zebra"
+    },
+    {
+      "id": "U_0025",
+      "target_count": 3,
+      "old_coco_image_id": 523807,
+      "new_coco_image_id": 68933,
+      "old_object_class": "bottle",
+      "new_object_class": "zebra"
+    },
+    {
+      "id": "U_0026",
+      "target_count": 3,
+      "old_coco_image_id": 107226,
+      "new_coco_image_id": 81766,
+      "old_object_class": "dog",
+      "new_object_class": "dog"
+    },
+    {
+      "id": "U_0029",
+      "target_count": 3,
+      "old_coco_image_id": 185599,
+      "new_coco_image_id": 445248,
+      "old_object_class": "orange",
+      "new_object_class": "elephant"
+    },
+    {
+      "id": "U_0032",
+      "target_count": 4,
+      "old_coco_image_id": 116208,
+      "new_coco_image_id": 69106,
+      "old_object_class": "bottle",
+      "new_object_class": "zebra"
+    },
+    {
+      "id": "U_0033",
+      "target_count": 4,
+      "old_coco_image_id": 262938,
+      "new_coco_image_id": 389451,
+      "old_object_class": "dog",
+      "new_object_class": "cow"
+    },
+    {
+      "id": "U_0038",
+      "target_count": 4,
+      "old_coco_image_id": 479126,
+      "new_coco_image_id": 44699,
+      "old_object_class": "chair",
+      "new_object_class": "sheep"
+    }
+  ],
+  "u_review_counts": {
+    "verified": 40,
+    "pending": 0,
+    "replace": 0
+  }
+}

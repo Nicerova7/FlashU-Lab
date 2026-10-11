@@ -1,0 +1,282 @@
+[
+  {
+    "id": "G_0000_s1001",
+    "prompt_id": "G_0000",
+    "seed": 1001,
+    "prompt": "a photo of two beds",
+    "relative_output": "00000/samples/0000.png"
+  },
+  {
+    "id": "G_0000_s1002",
+    "prompt_id": "G_0000",
+    "seed": 1002,
+    "prompt": "a photo of two beds",
+    "relative_output": "00000/samples/0001.png"
+  },
+  {
+    "id": "G_0000_s1003",
+    "prompt_id": "G_0000",
+    "seed": 1003,
+    "prompt": "a photo of two beds",
+    "relative_output": "00000/samples/0002.png"
+  },
+  {
+    "id": "G_0000_s1004",
+    "prompt_id": "G_0000",
+    "seed": 1004,
+    "prompt": "a photo of two beds",
+    "relative_output": "00000/samples/0003.png"
+  },
+  {
+    "id": "G_0001_s1001",
+    "prompt_id": "G_0001",
+    "seed": 1001,
+    "prompt": "a photo of three benchs",
+    "relative_output": "00001/samples/0000.png"
+  },
+  {
+    "id": "G_0001_s1002",
+    "prompt_id": "G_0001",
+    "seed": 1002,
+    "prompt": "a photo of three benchs",
+    "relative_output": "00001/samples/0001.png"
+  },
+  {
+    "id": "G_0001_s1003",
+    "prompt_id": "G_0001",
+    "seed": 1003,
+    "prompt": "a photo of three benchs",
+    "relative_output": "00001/samples/0002.png"
+  },
+  {
+    "id": "G_0001_s1004",
+    "prompt_id": "G_0001",
+    "seed": 1004,
+    "prompt": "a photo of three benchs",
+    "relative_output": "00001/samples/0003.png"
+  },
+  {
+    "id": "G_0002_s1001",
+    "prompt_id": "G_0002",
+    "seed": 1001,
+    "prompt": "a photo of four chairs",
+    "relative_output": "00002/samples/0000.png"
+  },
+  {
+    "id": "G_0002_s1002",
+    "prompt_id": "G_0002",
+    "seed": 1002,
+    "prompt": "a photo of four chairs",
+    "relative_output": "00002/samples/0001.png"
+  },
+  {
+    "id": "G_0002_s1003",
+    "prompt_id": "G_0002",
+    "seed": 1003,
+    "prompt": "a photo of four chairs",
+    "relative_output": "00002/samples/0002.png"
+  },
+  {
+    "id": "G_0002_s1004",
+    "prompt_id": "G_0002",
+    "seed": 1004,
+    "prompt": "a photo of four chairs",
+    "relative_output": "00002/samples/0003.png"
+  },
+  {
+    "id": "G_0003_s1001",
+    "prompt_id": "G_0003",
+    "seed": 1001,
+    "prompt": "a photo of two bicycles",
+    "relative_output": "00003/samples/0000.png"
+  },
+  {
+    "id": "G_0003_s1002",
+    "prompt_id": "G_0003",
+    "seed": 1002,
+    "prompt": "a photo of two bicycles",
+    "relative_output": "00003/samples/0001.png"
+  },
+  {
+    "id": "G_0003_s1003",
+    "prompt_id": "G_0003",
+    "seed": 1003,
+    "prompt": "a photo of two bicycles",
+    "relative_output": "00003/samples/0002.png"
+  },
+  {
+    "id": "G_0003_s1004",
+    "prompt_id": "G_0003",
+    "seed": 1004,
+    "prompt": "a photo of two bicycles",
+    "relative_output": "00003/samples/0003.png"
+  },
+  {
+    "id": "G_0004_s1001",
+    "prompt_id": "G_0004",
+    "seed": 1001,
+    "prompt": "a photo of three kites",
+    "relative_output": "00004/samples/0000.png"
+  },
+  {
+    "id": "G_0004_s1002",
+    "prompt_id": "G_0004",
+    "seed": 1002,
+    "prompt": "a photo of three kites",
+    "relative_output": "00004/samples/0001.png"
+  },
+  {
+    "id": "G_0004_s1003",
+    "prompt_id": "G_0004",
+    "seed": 1003,
+    "prompt": "a photo of three kites",
+    "relative_output": "00004/samples/0002.png"
+  },
+  {
+    "id": "G_0004_s1004",
+    "prompt_id": "G_0004",
+    "seed": 1004,
+    "prompt": "a photo of three kites",
+    "relative_output": "00004/samples/0003.png"
+  },
+  {
+    "id": "G_0005_s1001",
+    "prompt_id": "G_0005",
+    "seed": 1001,
+    "prompt": "a photo of four buses",
+    "relative_output": "00005/samples/0000.png"
+  },
+  {
+    "id": "G_0005_s1002",
+    "prompt_id": "G_0005",
+    "seed": 1002,
+    "prompt": "a photo of four buses",
+    "relative_output": "00005/samples/0001.png"
+  },
+  {
+    "id": "G_0005_s1003",
+    "prompt_id": "G_0005",
+    "seed": 1003,
+    "prompt": "a photo of four buses",
+    "relative_output": "00005/samples/0002.png"
+  },
+  {
+    "id": "G_0005_s1004",
+    "prompt_id": "G_0005",
+    "seed": 1004,
+    "prompt": "a photo of four buses",
+    "relative_output": "00005/samples/0003.png"
+  },
+  {
+    "id": "G_0006_s1001",
+    "prompt_id": "G_0006",
+    "seed": 1001,
+    "prompt": "a photo of two wine glasses",
+    "relative_output": "00006/samples/0000.png"
+  },
+  {
+    "id": "G_0006_s1002",
+    "prompt_id": "G_0006",
+    "seed": 1002,
+    "prompt": "a photo of two wine glasses",
+    "relative_output": "00006/samples/0001.png"
+  },
+  {
+    "id": "G_0006_s1003",
+    "prompt_id": "G_0006",
+    "seed": 1003,
+    "prompt": "a photo of two wine glasses",
+    "relative_output": "00006/samples/0002.png"
+  },
+  {
+    "id": "G_0006_s1004",
+    "prompt_id": "G_0006",
+    "seed": 1004,
+    "prompt": "a photo of two wine glasses",
+    "relative_output": "00006/samples/0003.png"
+  },
+  {
+    "id": "G_0007_s1001",
+    "prompt_id": "G_0007",
+    "seed": 1001,
+    "prompt": "a photo of three pizzas",
+    "relative_output": "00007/samples/0000.png"
+  },
+  {
+    "id": "G_0007_s1002",
+    "prompt_id": "G_0007",
+    "seed": 1002,
+    "prompt": "a photo of three pizzas",
+    "relative_output": "00007/samples/0001.png"
+  },
+  {
+    "id": "G_0007_s1003",
+    "prompt_id": "G_0007",
+    "seed": 1003,
+    "prompt": "a photo of three pizzas",
+    "relative_output": "00007/samples/0002.png"
+  },
+  {
+    "id": "G_0007_s1004",
+    "prompt_id": "G_0007",
+    "seed": 1004,
+    "prompt": "a photo of three pizzas",
+    "relative_output": "00007/samples/0003.png"
+  },
+  {
+    "id": "G_0008_s1001",
+    "prompt_id": "G_0008",
+    "seed": 1001,
+    "prompt": "a photo of four vases",
+    "relative_output": "00008/samples/0000.png"
+  },
+  {
+    "id": "G_0008_s1002",
+    "prompt_id": "G_0008",
+    "seed": 1002,
+    "prompt": "a photo of four vases",
+    "relative_output": "00008/samples/0001.png"
+  },
+  {
+    "id": "G_0008_s1003",
+    "prompt_id": "G_0008",
+    "seed": 1003,
+    "prompt": "a photo of four vases",
+    "relative_output": "00008/samples/0002.png"
+  },
+  {
+    "id": "G_0008_s1004",
+    "prompt_id": "G_0008",
+    "seed": 1004,
+    "prompt": "a photo of four vases",
+    "relative_output": "00008/samples/0003.png"
+  },
+  {
+    "id": "G_0009_s1001",
+    "prompt_id": "G_0009",
+    "seed": 1001,
+    "prompt": "a photo of two backpacks",
+    "relative_output": "00009/samples/0000.png"
+  },
+  {
+    "id": "G_0009_s1002",
+    "prompt_id": "G_0009",
+    "seed": 1002,
+    "prompt": "a photo of two backpacks",
+    "relative_output": "00009/samples/0001.png"
+  },
+  {
+    "id": "G_0009_s1003",
+    "prompt_id": "G_0009",
+    "seed": 1003,
+    "prompt": "a photo of two backpacks",
+    "relative_output": "00009/samples/0002.png"
+  },
+  {
+    "id": "G_0009_s1004",
+    "prompt_id": "G_0009",
+    "seed": 1004,
+    "prompt": "a photo of two backpacks",
+    "relative_output": "00009/samples/0003.png"
+  }
+]

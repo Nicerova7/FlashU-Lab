@@ -1,0 +1,202 @@
+[
+  {
+    "id": "G_0000",
+    "geneval_index": 214,
+    "metadata": {
+      "tag": "counting",
+      "include": [
+        {
+          "class": "bed",
+          "count": 2
+        }
+      ],
+      "exclude": [
+        {
+          "class": "bed",
+          "count": 3
+        }
+      ],
+      "prompt": "a photo of two beds"
+    }
+  },
+  {
+    "id": "G_0001",
+    "geneval_index": 255,
+    "metadata": {
+      "tag": "counting",
+      "include": [
+        {
+          "class": "bench",
+          "count": 3
+        }
+      ],
+      "exclude": [
+        {
+          "class": "bench",
+          "count": 4
+        }
+      ],
+      "prompt": "a photo of three benchs"
+    }
+  },
+  {
+    "id": "G_0002",
+    "geneval_index": 221,
+    "metadata": {
+      "tag": "counting",
+      "include": [
+        {
+          "class": "chair",
+          "count": 4
+        }
+      ],
+      "exclude": [
+        {
+          "class": "chair",
+          "count": 5
+        }
+      ],
+      "prompt": "a photo of four chairs"
+    }
+  },
+  {
+    "id": "G_0003",
+    "geneval_index": 197,
+    "metadata": {
+      "tag": "counting",
+      "include": [
+        {
+          "class": "bicycle",
+          "count": 2
+        }
+      ],
+      "exclude": [
+        {
+          "class": "bicycle",
+          "count": 3
+        }
+      ],
+      "prompt": "a photo of two bicycles"
+    }
+  },
+  {
+    "id": "G_0004",
+    "geneval_index": 209,
+    "metadata": {
+      "tag": "counting",
+      "include": [
+        {
+          "class": "kite",
+          "count": 3
+        }
+      ],
+      "exclude": [
+        {
+          "class": "kite",
+          "count": 4
+        }
+      ],
+      "prompt": "a photo of three kites"
+    }
+  },
+  {
+    "id": "G_0005",
+    "geneval_index": 258,
+    "metadata": {
+      "tag": "counting",
+      "include": [
+        {
+          "class": "bus",
+          "count": 4
+        }
+      ],
+      "exclude": [
+        {
+          "class": "bus",
+          "count": 5
+        }
+      ],
+      "prompt": "a photo of four buses"
+    }
+  },
+  {
+    "id": "G_0006",
+    "geneval_index": 239,
+    "metadata": {
+      "tag": "counting",
+      "include": [
+        {
+          "class": "wine glass",
+          "count": 2
+        }
+      ],
+      "exclude": [
+        {
+          "class": "wine glass",
+          "count": 3
+        }
+      ],
+      "prompt": "a photo of two wine glasses"
+    }
+  },
+  {
+    "id": "G_0007",
+    "geneval_index": 240,
+    "metadata": {
+      "tag": "counting",
+      "include": [
+        {
+          "class": "pizza",
+          "count": 3
+        }
+      ],
+      "exclude": [
+        {
+          "class": "pizza",
+          "count": 4
+        }
+      ],
+      "prompt": "a photo of three pizzas"
+    }
+  },
+  {
+    "id": "G_0008",
+    "geneval_index": 191,
+    "metadata": {
+      "tag": "counting",
+      "include": [
+        {
+          "class": "vase",
+          "count": 4
+        }
+      ],
+      "exclude": [
+        {
+          "class": "vase",
+          "count": 5
+        }
+      ],
+      "prompt": "a photo of four vases"
+    }
+  },
+  {
+    "id": "G_0009",
+    "geneval_index": 180,
+    "metadata": {
+      "tag": "counting",
+      "include": [
+        {
+          "class": "backpack",
+          "count": 2
+        }
+      ],
+      "exclude": [
+        {
+          "class": "backpack",
+          "count": 3
+        }
+      ],
+      "prompt": "a photo of two backpacks"
+    }
+  }
+]
