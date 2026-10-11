@@ -226,7 +226,7 @@
       47837
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "pending",
+    "review_status": "verified",
     "id": "U_0014"
   },
   {
@@ -323,7 +323,7 @@
       89896
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "pending",
+    "review_status": "verified",
     "id": "U_0020"
   },
   {
@@ -340,7 +340,7 @@
       42791
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "pending",
+    "review_status": "verified",
     "id": "U_0021"
   },
   {
@@ -357,7 +357,7 @@
       593141
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "pending",
+    "review_status": "verified",
     "id": "U_0022"
   },
   {
@@ -374,7 +374,7 @@
       600431
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "pending",
+    "review_status": "verified",
     "id": "U_0023"
   },
   {
@@ -425,7 +425,7 @@
       597237
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "pending",
+    "review_status": "verified",
     "id": "U_0026"
   },
   {
@@ -459,7 +459,7 @@
       2065843
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "pending",
+    "review_status": "verified",
     "id": "U_0028"
   },
   {
@@ -512,7 +512,7 @@
       43297
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "pending",
+    "review_status": "verified",
     "id": "U_0031"
   },
   {
@@ -548,7 +548,7 @@
       1823356
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "pending",
+    "review_status": "verified",
     "id": "U_0033"
   },
   {
@@ -566,7 +566,7 @@
       237693
     ],
     "reference_source": "COCO instances_val2017",
-    "review_status": "pending",
+    "review_status": "verified",
     "id": "U_0034"
   },
   {
