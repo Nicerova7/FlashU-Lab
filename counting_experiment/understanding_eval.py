@@ -14,6 +14,9 @@ import torch
 from torch import nn
 
 
+ANSWER_INSTRUCTION = "Answer with only a single integer."
+
+
 def sha256_file(path):
     digest = hashlib.sha256()
     with Path(path).open("rb") as stream:
@@ -173,7 +176,7 @@ class UnderstandingFFNRouter:
 
 
 def parse_count(answer):
-    """Accept one unambiguous integer, written as digits or an English number."""
+    """Read the stated count; later object descriptions may contain other numbers."""
     text = str(answer).casefold().strip()
     # Do not interpret part of a decimal/fraction/negative answer as a count.
     if re.search(r"-\s*\d|\d\s*[./]\s*\d", text):
@@ -183,13 +186,26 @@ def parse_count(answer):
         range(21)))
     if re.search(r"\b(thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand)\b", text):
         return None
-    values = []
-    for token in re.findall(r"\b\d+\b|\b[a-z]+\b", text):
-        if token.isdigit():
-            values.append(int(token))
-        elif token in words:
-            values.append(words[token])
-    return values[0] if values and len(set(values)) == 1 else None
+    # The first sentence states the total in our counting responses. For example,
+    # "There are three bottles. Two of them ..." has a total of three.
+    first_sentence = re.split(r"[.!?]", text, maxsplit=1)[0]
+    if re.search(r"\b(maybe|perhaps|possibly|approximately|about|unsure|uncertain|might|could|not)\b",
+                 first_sentence):
+        return None
+    if re.search(r"\b(actually|correction|instead|rather)\b", text):
+        return None
+    values = [int(token) if token.isdigit() else words[token]
+              for token in re.findall(r"\b\d+\b|\b[a-z]+\b", first_sentence)
+              if token.isdigit() or token in words]
+    if not values or len(set(values)) != 1:
+        return None
+    # Reject conflicting explicit totals in later sentences rather than choosing
+    # the first number blindly. "One cat is lying ..." is a description, not a total.
+    number = r"\d+|" + "|".join(words)
+    totals = re.findall(r"\bthere\s+(?:is|are)\s+(" + number + r")\b", text)
+    if any((int(token) if token.isdigit() else words[token]) != values[0] for token in totals):
+        return None
+    return values[0]
 
 
 @torch.no_grad()
@@ -207,7 +223,7 @@ def infer_understanding(case, image, resources, config, scorers, mode,
     ).squeeze(2).to(resources.dtype)
     embeds, attention, visual, _ = assemble_prefill(
         resources.model, resources.tokenizer, resources.token_ids, latents,
-        case["prompt"], int(config.dataset.preprocessing.max_seq_length),
+        case["prompt"] + "\n" + ANSWER_INSTRUCTION, int(config.dataset.preprocessing.max_seq_length),
         omni_attn_mask_naive, interpolate_pos_encoding, truncate_prompt=False,
     )
     router = None

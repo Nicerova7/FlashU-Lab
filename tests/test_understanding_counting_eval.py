@@ -116,6 +116,23 @@ class UnderstandingEvaluationTests(unittest.TestCase):
                        "2.0", "1/2", "twenty one", "one hundred", ""]:
             self.assertIsNone(parse(answer), answer)
 
+    def test_count_parser_reads_totals_before_object_descriptions(self):
+        parse = self.ns["parse_count"]
+        for answer, expected in [
+            ("There are two cats in the image. One cat is lying on the floor,", 2),
+            ("There are two dogs in the image. One dog is black and white, and", 2),
+            ("There are two zebras in the image. One zebra is standing with its", 2),
+            ("There are three bottles in the image. Two of them are dark brown glass bottles", 3),
+            ("There are four individuals visible in the image. One person is standing and appears to", 4),
+            ("There are two birds in the image. One bird is perched on a stone", 2),
+        ]:
+            self.assertEqual(parse(answer), expected, answer)
+        for answer in ["Maybe three giraffes.", "There are two or three cats.",
+                       "There are three cats. Actually, there are two.",
+                       "There are three cats. There are two cats.",
+                       "There are two cats and three dogs.", "There are not three cats."]:
+            self.assertIsNone(parse(answer), answer)
+
     def test_manifest_review_and_holdout_checks(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -289,7 +306,7 @@ class UnderstandingEvaluationTests(unittest.TestCase):
                 return SimpleNamespace(logits=logits, past_key_values=object())
 
         def assemble(model, tokenizer, token_ids, latents, prompt, *args, **kwargs):
-            self.assertEqual(prompt, "How many cats are there?")
+            self.assertEqual(prompt, "How many cats are there?\nAnswer with only a single integer.")
             return (torch.arange(1, 13).float().reshape(1, 12, 1), torch.zeros(1, 1, 12, 12),
                     torch.arange(1, 11), {})
 

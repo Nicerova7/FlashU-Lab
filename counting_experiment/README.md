@@ -48,6 +48,10 @@ Routing skips 10% of image-token FFN rows (rounded to an integer keep count) dur
 prefill in layers 0–26. Attention, text, layer 27, and answer decoding stay dense.
 Specialized routing applies `u` at every routed layer. The default runs three timing
 repeats per image and mode with identical seeds and rotating mode order.
+Every mode receives the same question followed by `Answer with only a single integer.`
+Scoring accepts an unambiguous total in the first sentence; later descriptions of
+individual objects can contain other numbers. Uncertain or conflicting totals
+remain unparseable. The maximum answer length remains 16 tokens.
 
 ## Outputs
 
