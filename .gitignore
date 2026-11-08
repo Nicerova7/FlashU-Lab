@@ -6,3 +6,4 @@ __pycache__/
 counting_experiment/test/images/
 counting_experiment/results/
 counting_experiment/*.zip
+/output/presentations/
